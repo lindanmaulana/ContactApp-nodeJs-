@@ -1,9 +1,1 @@
-[
-  { "nama": "Lindan", "nomor": "085322701120" },
-  { "nama": "Satria", "nomor": "087723855068", "email": "satria72@gmail.com" },
-  {
-    "nama": "Lindan",
-    "nomor": "087723855068",
-    "email": "Lindansatria72@gmail.com"
-  }
-]
+[{"nama":"Lindan","nomor":"085322701120"},{"nama":"Satria","nomor":"087723855068","email":"satri@gmail.com"},{"nama":"Lindan","nomor":"087723855068","email":"maulana@gmail.com"},{"nama":"Lindan","nomor":"089766542341","email":"maul@gmail.com"},{"nama":"Linan","nomor":"0987262","email":"maul@gmail.com"},{"nama":"Lindan","nomor":"98723","email":"maul@gmail.com"},{"nama":"Maul","nomor":"087263","email":"maul22@gmail.com"}]

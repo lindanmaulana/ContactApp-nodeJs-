@@ -1,35 +1,6 @@
-const fs = require("fs");
-const readline = require("readline");
-const validator = require("validator");
-
-const dirtPath = "./data";
-
-if (!fs.existsSync(dirtPath)) {
-  fs.mkdirSync(dirtPath, { recursive: true });
-  console.log("Folder sudah di buat!!");
-}
-
-if (!fs.existsSync(`${dirtPath}/contacts.json`)) {
-  fs.writeFileSync(`${dirtPath}/contacts.json`, "[]", "utf-8");
-  console.log("File sudah di buat!!!");
-}
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-const pertanyaan = (params) => {
-  return new Promise((resolve, reject) => {
-    rl.question(params.pertanyaan, (value) => {
-      if(params.validator(value)){
-        resolve(value)
-      } else {
-        reject("Your input error")
-      }
-    })
-  })
-}
+const fs = require('fs')
+const validator = require('validator')
+const {pertanyaan, rl} = require('./contacts.js')
 
 
 const mainApp = async () => {
@@ -52,14 +23,13 @@ const mainApp = async () => {
 
   const bunnyData = { nama, nomor, email };
 
-  const file = fs.readFileSync(`${dirtPath}/contacts.json`, "utf-8");
+  const file = fs.readFileSync(`./data/contacts.json`, "utf-8");
   const contact = JSON.parse(file);
   contact.push(bunnyData);
 
-  fs.writeFileSync(`${dirtPath}/contacts.json`, JSON.stringify(contact));
+  fs.writeFileSync(`./data/contacts.json`, JSON.stringify(contact));
 
   console.log("Data sudah tersimpan!!");
-
   rl.close()
 };
 
